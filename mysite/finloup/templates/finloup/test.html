@@ -1,0 +1,21 @@
+{% extends 'finloup/base.html'%}
+{% block title %}
+Main page
+{% endblock %}
+
+{% block body %}
+<p>Hi {{ user }}!</p>
+   <form method="POST" action="">
+      {%csrf_token%}
+      <label>Budget</label>
+      <input name="budget" type="number">
+      <input type="submit" value="Submit" class="btn btn-primary">
+   </form>
+   {% if message %}
+   <p>Result {{message}}</p>
+   {% endif %}
+   <form method="POST" action="logout">
+      {%csrf_token%}
+      <input type="submit" value="Logout" class="btn btn-danger">
+   </form>
+{% endblock %}

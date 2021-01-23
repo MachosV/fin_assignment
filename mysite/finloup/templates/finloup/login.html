@@ -1,0 +1,17 @@
+{% extends 'finloup/base.html'%}
+{% block title %}
+Login page
+{% endblock %}
+
+{% block body %}
+   <form method="POST" action="">
+      {%csrf_token%}
+      <label>Username</label>
+      <input name="username" type="text">
+      <input name="password" type="password" autocomplete="off">
+      <input type="submit" value="Submit" class="btn btn-primary">
+   </form>
+   {% if message %}
+   <p>{{message}}</p>
+   {% endif %} 
+{% endblock %}
